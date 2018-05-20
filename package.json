@@ -50,7 +50,7 @@
     "stop": "egg-scripts stop --title=egg-server-cnode",
     "restart": "npm run stop && npm run start",
     "docker": "egg-scripts start --title=egg-server-cnode",
-    "dev": "egg-bin dev  -port 8086",
+    "dev": "egg-bin dev  --port 8086",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
