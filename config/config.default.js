@@ -23,7 +23,7 @@ module.exports = appInfo => {
   config.session_secret = 'node_club_secret'; // 务必修改
 
   // add your config here
-  config.middleware = [ 'locals', 'authUser', 'blockUser', 'errorPage' ];
+  config.middleware = ['locals', 'authUser', 'blockUser', 'errorPage'];
 
   config.authUser = {
     enable: true,
@@ -40,9 +40,9 @@ module.exports = appInfo => {
 
   // 版块
   config.tabs = [
-    [ 'share', '分享' ],
-    [ 'ask', '问答' ],
-    [ 'job', '招聘' ],
+    ['share', '分享'],
+    ['ask', '问答'],
+    ['job', '招聘'],
   ];
 
   // RSS配置
@@ -167,6 +167,11 @@ module.exports = appInfo => {
   config.search = 'google'; // 'google', 'baidu', 'local'
 
   config.security = {
+    domainWhiteList: [ 'http://192.168.31.208:9091', 'http://192.168.31.208:7001',
+      'http://127.0.0.1:9091', 'http://127.0.0.1:8086', 'http://localhost:9091',
+      'http://localhost:7001', 'http://127.0.0.1:8080', 'http://192.168.31.208:8080',
+      'http://192.168.31.218:9090', 'http://192.168.183.1:9090', 'http://192.168.183.1:7001',
+    ],
     csrf: {
       ignore: '/api/*/*',
     },

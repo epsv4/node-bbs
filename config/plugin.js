@@ -36,7 +36,7 @@ exports.passportLocal = {
 exports.alinode = {
   enable: true,
   package: 'egg-alinode',
-  env: [ 'prod' ],
+  env: ['prod'],
 };
 
 exports.validate = {
@@ -47,4 +47,9 @@ exports.validate = {
 exports.routerPlus = {
   enable: true,
   package: 'egg-router-plus',
+};
+
+exports.cors = {
+  enable: true,
+  package: 'egg-cors',
 };
