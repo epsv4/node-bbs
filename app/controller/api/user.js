@@ -4,6 +4,11 @@ const Controller = require('egg').Controller;
 const _ = require('lodash');
 
 class UserController extends Controller {
+  async check() {
+    const { ctx } = this;
+    // let token = ctx.request.body.accessToken;
+
+  }
   async show() {
     const { ctx } = this;
     const loginname = ctx.params.loginname;

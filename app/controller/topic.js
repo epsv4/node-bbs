@@ -190,7 +190,11 @@ class TopicController extends Controller {
     const { ctx, service, config } = this;
 
     const topic_id = ctx.params.tid;
-    let { title, tab, content } = ctx.request.body;
+    let { title, tab, content, filter, kind } = ctx.request.body;
+
+    if (content === undefined) {
+      content = '';
+    }
 
     const { topic } = await service.topic.getTopicById(topic_id);
     if (!topic) {
@@ -232,10 +236,17 @@ class TopicController extends Controller {
 
       // 保存话题
       topic.title = title;
-      topic.content = content;
+      if (content !== '') {
+        topic.content = content;
+      }
       topic.tab = tab;
       topic.update_at = new Date();
-
+      if (filter !== undefined) {
+        topic.filter = filter;
+      }
+      if (kind !== undefined) {
+        topic.kind = kind;
+      }
       await topic.save();
 
       await service.at.sendMessageToMentionUsers(

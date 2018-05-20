@@ -3,9 +3,7 @@
 module.exports = () => {
   return async function(ctx, next) {
     let token = '';
-    if (
-      ctx.headers.authorization && ctx.headers.authorization.split(' ')[0] === 'Bearer'
-    ) {
+    if (ctx.headers.authorization && ctx.headers.authorization.split(' ')[0] === 'Bearer') {
       token = ctx.headers.authorization.split(' ')[1];
     } else if (ctx.query.accesstoken) {
       token = ctx.query.accesstoken;
